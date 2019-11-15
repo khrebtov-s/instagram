@@ -1,7 +1,27 @@
 import React, { Component } from 'react';
 import Post from '../post'
+import InstaService from '../../services'
 
 export default class Posts extends Component {
+    InstaService = new InstaService();
+    state = {
+        posts: [],
+        error: false
+    }
+
+    updatePosts() {
+        this.InstaService.getAllPosts()
+            .then()
+            .catch();
+    }
+
+    onPostsLoaded = (posts) => {
+        this.setState({
+            posts,
+            error: false
+        })
+    }
+
     render() {
         return (
             <div className="left">
