@@ -1,8 +1,8 @@
-import React, { Copmonent } from 'react';
+import React, { Component } from 'react';
 import logo from '../../img/logo.svg';
 import './header.css';
 
-export default class Header extends Copmonent {
+export default class Header extends Component {
     render() {
         return (
             <header>
@@ -10,7 +10,7 @@ export default class Header extends Copmonent {
                     <a href="#" className="logo">
                         <img src={logo} alt="logo" />
                     </a>
-                    <nav>
+                    <nav className="links">
                         <ul>
                             <li>
                                 <a href="#" className="menu_link">Лента</a>
@@ -22,6 +22,6 @@ export default class Header extends Copmonent {
                     </nav>
                 </div>
             </header>
-        )
-    }
-}
+        );
+    };
+};
