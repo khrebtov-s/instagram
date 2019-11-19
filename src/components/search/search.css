@@ -1,0 +1,120 @@
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+.LWmhU {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    min-width: 125px;
+    width: 215px;
+}
+
+._0aCwM {
+    height: 28px;
+}
+
+.x3qfX:placeholder-shown {
+    font-size: 16px;
+}
+
+.x3qfX {
+    -webkit-appearance: none;
+    font-size: 14px;
+}
+
+.XTCLo {
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    color: #262626;
+    outline: 0;
+    padding: 3px 10px 3px 26px;
+    z-index: 2;
+}
+
+.XTCLo,
+.pbgfb {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.Di7vw {
+    background: #fafafa;
+    border: solid 1px #dbdbdb;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.pbgfb {
+    border-radius: 3px;
+    color: #999;
+    cursor: text;
+    font-size: 14px;
+    font-weight: 300;
+    left: 0;
+    padding: 7px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    z-index: 2;
+}
+
+.XTCLo,
+.pbgfb {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.eyXLr {
+    display: inline;
+    left: -5px;
+}
+
+._6RZXI {
+    margin-right: 6px;
+    vertical-align: baseline;
+}
+
+.TqC_a,
+._6RZXI {
+    display: inline-block;
+}
+
+.coreSpriteSearchIcon,
+.coreSpriteSensitivityIcon {
+    background-repeat: no-repeat;
+    background-position: -387px -337px;
+    height: 10px;
+    width: 10px;
+}
+
+.coreSpriteSearchIcon {
+    background-image: url(../../img/search.png);
+}
