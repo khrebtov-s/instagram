@@ -4,7 +4,7 @@ import { map as _map, omit as _omit, find as _find } from 'lodash';
 import { Container, Row, Button } from 'reactstrap';
 
 import Post from './post-view';
-import PictureModal from './UserPictureModalView';
+import PictureModal from './picture-modal';
 import UploadModal from './UploadModalView';
 
 export default class PostsView extends Component {
@@ -80,13 +80,25 @@ export default class PostsView extends Component {
                 <Button>
                     Refresh
                 </Button>
+
                 <Row>
                     {renderPosts}
                 </Row>
+
+                <PictureModal
+                    show_modal={this.state.show_modal}
+                    closeModalHandler={this.closeModal}
+                    post={this.state.current_post}
+                    addCommentHandler={this.addCommentHandler}
+                    addLikeHandler={this.addLikeHandler}
+                    deletePostHandler={this.deletePostHandler}
+                />
+                <UploadModal
+                    show_modal={this.state.show_upload_modal}
+                    closeModalHandler={this.closeUploadModal}
+                    addNewPost={this.addNewPostHandler}
+                />
             </Container>
         );
     };
-
-
-
-}
+};

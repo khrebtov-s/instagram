@@ -173,3 +173,9 @@ header {
 .right {
     margin-left: 2rem;
 }
+
+.modal-body {
+    display: flex;
+    flex: 1;
+    min-height: 37em;
+}
