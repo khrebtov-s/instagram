@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InstaService from '../../services';
+import InstaService from '../../../services';
 import ErrorMessage from '../error';
 import { conncet } from 'react-redux';
 
@@ -8,11 +8,11 @@ import {
     addComment,
     addPost,
     deletePost
-} from '../../actions';
+} from '../../../actions';
 
 import {
     notice
-} from '../../services'
+} from '../../../services'
 
 export default class Palette extends Component {
     InstaService = new InstaService();

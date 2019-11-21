@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import User from '../user';
-import { InstaService } from '../../services';
+import { InstaService } from '../../../services';
 import ErrorMessage from '../error';
 
 export default class Users extends Component {
