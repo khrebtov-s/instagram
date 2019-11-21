@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import InstaService from '../../services';
 import ErrorMessage from '../error';
+import { conncet } from 'react-redux';
+
+import {
+    addLike,
+    addComment,
+    addPost,
+    deletePost
+} from '../../actions';
+
+import {
+    notice
+} from '../../services'
 
 export default class Palette extends Component {
     InstaService = new InstaService();

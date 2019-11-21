@@ -24,7 +24,7 @@ export default class Header extends Component {
                             </li>
                             <li>
                                 <Link to="/profile" className="menu_link">
-                                    <svg aria-label="Профиль" class="_8-yf5 "
+                                    <svg aria-label="Профиль" className="_8-yf5 "
                                         fill="#262626" height="24" viewBox="0 0 48 48"
                                         width="24">
                                         <g>

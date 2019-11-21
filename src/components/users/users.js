@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import User from '../user';
-import InstaService from '../../services';
+import { InstaService } from '../../services';
 import ErrorMessage from '../error';
 
 export default class Users extends Component {
@@ -39,10 +39,10 @@ export default class Users extends Component {
             const { src, alt, name } = item;
             return (
                 <User
-                     src={src}
-                     alt={alt}
-                     name={name}
-                 />
+                    src={src}
+                    alt={alt}
+                    name={name}
+                />
             )
         })
     }
@@ -58,9 +58,9 @@ export default class Users extends Component {
 
         return (
             <div className="right">
-                 <div className="users__block">
-                   {items}  
-                 </div>
+                <div className="users__block">
+                    {items}
+                </div>
             </div>
         );
     };
