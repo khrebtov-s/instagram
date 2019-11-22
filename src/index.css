@@ -9,6 +9,14 @@ body {
     background-color: #FAFAFA;
 }
 
+.d-flex {
+    display: flex;
+}
+
+.f-1 {
+    flex: 1;
+}
+
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -178,4 +186,84 @@ header {
     display: flex;
     flex: 1;
     min-height: 37em;
+}
+
+.media-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-modal {
+    display: flex;
+    width: 100%;
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-info-section {
+    display: 'flex';
+    flex: 1;
+    flex-direction: 'row';
+    align-items: 'center';
+    border-bottom: thin solid #DEDEDE;
+    margin: 7px 0;
+}
+
+.user-info-modal {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-name {
+    margin-bottom: 0.3rem;
+    margin: 7px;
+}
+
+.verified-badge {
+    background-position: -42px -425px;
+    height: 18px;
+    width: 18px;
+    background-repeat: no-repeat;
+    background-image: url(https://www.instagram.com/static/bundles/base/sprite_core.png/00b79edf00fd.png)
+}
+
+.empty-heart-badge {
+    background-position: 0 -400px;
+    width: 24px;
+    height: 21px;
+    background-repeat: no-repeat;
+    background-image: url(https://www.instagram.com/static/bundles/base/sprite_core.png/00b79edf00fd.png)
+}
+
+.heart-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.header-user {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-bottom: 1.7em;
+}
+
+.header-user-section {
+    flex: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.following-btn {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
 }

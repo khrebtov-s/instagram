@@ -3,7 +3,7 @@ import User from '../user';
 import { toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 
 toast.configure()
 

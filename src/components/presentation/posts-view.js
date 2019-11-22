@@ -5,7 +5,6 @@ import { Container, Row, Button } from 'reactstrap';
 
 import Post from './post-view';
 import PictureModal from './picture-modal';
-import UploadModal from './UploadModalView';
 
 export default class PostsView extends Component {
 
@@ -92,11 +91,6 @@ export default class PostsView extends Component {
                     addCommentHandler={this.addCommentHandler}
                     addLikeHandler={this.addLikeHandler}
                     deletePostHandler={this.deletePostHandler}
-                />
-                <UploadModal
-                    show_modal={this.state.show_upload_modal}
-                    closeModalHandler={this.closeUploadModal}
-                    addNewPost={this.addNewPostHandler}
                 />
             </Container>
         );

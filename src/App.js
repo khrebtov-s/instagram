@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from './components/header';
-import Feed from './components/feed';
-import Profile from './components/profile';
+import Header from './components/container/header';
+import Feed from './components/container/feed';
+import Profile from './components/container/profile';
+import Account from './components/container/user-account'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         />
         <Route
           path="/profile"
-          component={Profile}
+          component={Account}
           exact
         />
       </div>

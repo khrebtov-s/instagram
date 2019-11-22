@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InstaService from '../../../services';
+import { InstaService } from '../../../services';
 import ErrorMessage from '../error';
 import { conncet } from 'react-redux';
 

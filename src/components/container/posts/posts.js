@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from '../post';
+// import Post from '../post';
 import { InstaService } from '../../../services';
 import User from '../user';
 import ErrorMessage from '../error';

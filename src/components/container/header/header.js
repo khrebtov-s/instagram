@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../../img/logo.svg';
-import logoText from '../../img/instagram_logo.png';
+import logo from '../../../img/logo.svg'
+import logoText from '../../../img/instagram_logo.png';
 import './header.css';
 import { Link } from 'react-router-dom';
 import Search from '../search';
