@@ -11,32 +11,21 @@ const User = props => (
                 <section className="header-user-section">
                     <div className="profile-img-holder">
                         <img
+                            className="image"
                             alt=""
                             src={`${process.env.PUBLIC_URL}/images/0.jpg`}
-                            style={{ width: '150px', height: '150px' }}
                         />
                     </div>
                 </section>
                 <section className="user-name_wrapper">
-                    <Row
-                        style={{
-                            flex: 1,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            display: 'flex',
-                        }}
-                    >
+                    <Row className="media-wrapper f-1">
                         <Col xs="12" md="8">
                             <h5 className="user-name">
                                 <a
+                                    className="header-link"
                                     href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style={{
-                                        textDecoration: 'none',
-                                        color: 'inherit',
-                                        fontSize: '1.71rem',
-                                    }}
                                 >
                                     Norman Kapoor
                 </a>
@@ -51,14 +40,11 @@ const User = props => (
                             />
                         </Col>
                         <Col xs="10" md="3">
+                            <span></span>
                             <Button
+                                className="inherit"
                                 outline
                                 size="sm"
-                                style={{
-                                    color: '#fff',
-                                    backgroundColor: '#6c757d',
-                                    borderColor: '#6c757d',
-                                }}
                             >
                                 Following
               </Button>

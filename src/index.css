@@ -253,6 +253,10 @@ header {
     flex: 1;
     flex-direction: row;
     margin-bottom: 1.7em;
+    margin-top: 2rem;
+
+    background: #fff;
+    box-shadow: none;
 }
 
 .header-user-section,
@@ -280,4 +284,53 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.header-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.7rem;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+}
+
+.inherit {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.3);
+    color: white;
+}
+
+.heart-btn {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.muted-text {
+    color: #AAA;
+    font-size: 12px;
+    margin: 0 5px;
+}
+
+.user-meta-info {
+    margin: 7px
+}
+
+.aaa {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

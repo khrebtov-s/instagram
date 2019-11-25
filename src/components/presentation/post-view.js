@@ -30,14 +30,9 @@ export default class PostView extends Component {
                     onClick={() => this.props.showUserModal(this.props)}
                 >
                     <CardImg width="100%" src={props.Image} alt="Card image cap" />
-                    <CardImgOverlay
+                    <CardImgOverlay className="card"
                         style={{
-                            visibility: this.state.show_info ? 'visible' : 'hidden',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: 'rgb(0, 0, 0, 0.3)',
-                            color: 'white'
+                            visibility: this.state.show_info ? 'visible' : 'hidden'
                         }}
                     >
                         <CardText>

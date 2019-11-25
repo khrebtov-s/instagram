@@ -14,7 +14,7 @@ const externalCloseBtn = props => (
         }}
         onClick={props.closeModalHandler}
     >
-        Close
+        x
   </button>
 )
 
@@ -109,13 +109,7 @@ const PictureModal = props => (
                         <section style={{ flex: 1 }} className="modal-info-section">
                             <div>
                                 <span
-                                    className="empty-heart-badge"
-                                    style={{
-                                        width: '24px',
-                                        height: '24px',
-                                        display: 'inline-block',
-                                        cursor: 'pointer',
-                                    }}
+                                    className="empty-heart-badge heart-btn"
                                     onClick={() => props.addLikeHandler(props.post.id)}
                                 />{' '}
                                 <strong>{props.post.likes} likes</strong>
@@ -139,10 +133,11 @@ const PictureModal = props => (
                         <section style={{ flex: 1 }}>
                             <Input
                                 placeholder="Add Comment ..."
+                                // send comment by press enter
                                 onKeyPress={event => {
                                     if (event.key === 'Enter') {
                                         props.addCommentHandler(props.post.id, event.target.value)
-                                        // clear the text input?
+                                        // clear input
                                         event.target.value = ''
                                     }
                                 }}
