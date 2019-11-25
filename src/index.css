@@ -255,7 +255,8 @@ header {
     margin-bottom: 1.7em;
 }
 
-.header-user-section {
+.header-user-section,
+.modal-picture {
     flex: 7;
     display: flex;
     justify-content: center;
@@ -266,4 +267,9 @@ header {
     color: #fff;
     background-color: #6c757d;
     border-color: #6c757d;
+}
+
+.image-wrap {
+    display: flex;
+    width: 100%;
 }
