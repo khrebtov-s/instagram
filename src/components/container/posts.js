@@ -1,17 +1,17 @@
-import { connect } fom 'react-redux';
+import { connect } from 'react-redux';
 
 import {
     addLike,
     addComment,
     addPost,
     deletePost
-} from '../../../actions';
+} from '../../actions';
 
-import PostView from '../../presentation/posts-view';
+import PostsView from '../presentation/posts-view';
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.post
+        posts: state.posts
     }
 };
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
         addCommentHandler: (post_id, comment) => {
             dispatch(addComment(post_id, comment));
         },
-        addLikeHandler: (image_id) => {
+        addLikeHandler: (post_id) => {
             dispatch(addLike(post_id));
         },
         addPostHandler: (image_id) => {
@@ -35,4 +35,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PostView);
+)(PostsView);
