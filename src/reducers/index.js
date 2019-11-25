@@ -3,19 +3,6 @@ import _ from 'lodash'
 // import initial data
 import InitialPostsData from '../data/posts'
 
-// reducer for the Insta app
-// START: APP STATE
-/*
-{
-  posts: [
-    id,
-    img,
-    comments: []
-  ]
-}
-*/
-// END: APP STATE
-
 // define our initial state
 const initialState = {
     posts: InitialPostsData,
@@ -112,7 +99,6 @@ function postReducer(state = initialState.posts, action) {
     }
 }
 
-// starred meditations reducer
 function starredMeditationsReducer(
     state = initialState.starredMeditations,
     action
@@ -127,8 +113,7 @@ function starredMeditationsReducer(
     }
 }
 
-// OVERALL REDUCER (to be exported)
-// we are explicitly not using combineReducers to have better visibility of what is going on
+
 export default function appReducer(state = initialState, action) {
     return {
         posts: postReducer(state.posts, action),

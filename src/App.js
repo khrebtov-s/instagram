@@ -18,7 +18,7 @@ function App() {
         <Route
           path="/profile"
           component={Account}
-          exact
+        // exact
         />
       </div>
     </Router>

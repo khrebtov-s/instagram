@@ -11,7 +11,7 @@ import Home from './home'
 toast.configure()
 
 const Account = () => (
-    <Container fluid className="App-Container">
+    <Container className="App-Container">
         <Row className="App">
             <Home />
         </Row>
