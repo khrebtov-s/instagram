@@ -33,7 +33,7 @@ function _getUniqueId(collection) {
     return MAX_ID + 1
 }
 
-function add_like_to_post(state, action) {
+function add_like(state, action) {
     // extract the details from the action
     const { post_id } = action
     // go through all the posts; and add comment for the given post_id
@@ -50,7 +50,7 @@ function add_like_to_post(state, action) {
     return updated_posts
 }
 
-function add_comment_to_post(state, action) {
+function add_comment(state, action) {
     // extract the details from the action
     const { post_id, comment } = action
     // go through all the posts; and add comment for the given post_id
@@ -97,11 +97,11 @@ function delete_post(state, action) {
 function postReducer(state = initialState.posts, action) {
     switch (action.type) {
         // add like to post
-        case 'ADD_LIKE_TO_POST':
-            return add_like_to_post(state, action)
+        case 'ADD_LIKE':
+            return add_like(state, action)
         // add a comment to post
-        case 'ADD_COMMENT_TO_POST':
-            return add_comment_to_post(state, action)
+        case 'ADD_COMMENT':
+            return add_comment(state, action)
         case 'ADD_POST':
             return add_post(state, action)
         case 'DELETE_POST':
