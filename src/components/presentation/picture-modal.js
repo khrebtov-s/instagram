@@ -1,8 +1,8 @@
-import React from 'react';
-import { map as _map } from 'lodash';
-import { Col, Row, Button, Modal, ModalBody, Input } from 'reactstrap';
+import React from 'react'
+import { map as _map } from 'lodash'
+import { Row, Col, Button, Modal, ModalBody, Input } from 'reactstrap'
 
-const closeBtn = (props) => {
+const externalCloseBtn = props => (
     <button
         className="close"
         style={{
@@ -10,103 +10,149 @@ const closeBtn = (props) => {
             top: '19px',
             right: '19px',
             color: 'white',
-            fontSize: '3rem'
+            fontSize: '3em',
         }}
         onClick={props.closeModalHandler}
     >
         Close
-    </button>
-};
+  </button>
+)
 
-const PictureModal = (props) => {
-    <>
+const PictureModal = props => (
+    <div>
         <Modal
             isOpen={props.show_modal}
             fade={false}
             className={props.className}
             centered={true}
-            exterenal={closeBtn(props)}
+            size="lg"
+            external={externalCloseBtn(props)}
         >
-            <ModalBody className="modal-body">
+            <ModalBody
+                style={{
+                    display: 'flex',
+                    flex: 1,
+                    minHeight: '37em',
+                }}
+            >
                 <Row>
                     <Col
-                        className="media-wrapper"
                         md="7"
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
                     >
                         <div>
-                            <img
-                                className="image-modal"
-                                src={props.post.Image}
-                                alt=""
-                            />
+                            {props.post.type === 'video' ? (
+                                <video
+                                    controls
+                                    style={{
+                                        display: 'flex',
+                                        width: '100%',
+                                    }}
+                                >
+                                    <source src={props.post.Image} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                </video>
+                            ) : (
+                                    <img
+                                        src={props.post.Image}
+                                        style={{ display: 'flex', width: '100%' }}
+                                        alt=""
+                                    />
+                                )}
                         </div>
                     </Col>
-                    <Col
-                        className="info-wrapper modal-info-section"
-                        md="5"
-                    >
-                    </Col>
-                    <Row
-                        className="user-info-modal">
-                        <Col
-                            xs="12"
-                            md="8">
-                            <h6 className="user-name">James Vinslet</h6>
-                        </Col>
-                        <Col
-                            xs="1"
-                            md="1">
-                            <span
-                                className="verified-badge d-flex"
-                            />
-                        </Col>
-                    </Row>
-                    <section
-                        className="modal-info-section"
-                        style={{ flex: 7, overFlow: 'auto' }}>
-                        {_map(props.post.comments, (comments, index) => (
-                            <div key={index}>{comments}</div>
-                        ))}
-                    </section>
 
-                    <section className="modal-info-section f-1">
-                        <div>
-                            <span
-                                className="empty-heart-badge heart-icon"
-                                onClick={() => props.addLikeHandler(props.post.id)}
+                    <Col
+                        md="5"
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}
+                        className="modal-info-section"
+                    >
+                        <Row
+                            style={{
+                                display: 'flex',
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <Col xs="12" md="8">
+                                <h6 className="user-name">Norman Kapoor</h6>
+                            </Col>
+
+                            <Col xs="1" md="1">
+                                <span
+                                    className="verified-badge"
+                                    style={{
+                                        display: 'flex',
+                                    }}
+                                />
+                            </Col>
+                            <Col xs="10" md="3">
+                                <span className="muted-text">Following</span>
+                            </Col>
+                        </Row>
+                        <section
+                            style={{ flex: 7, overflowY: 'auto' }}
+                            className="modal-info-section"
+                        >
+                            {_map(props.post.comments, (c, index) => (
+                                <div key={index}>{c}</div>
+                            ))}
+                        </section>
+                        <section style={{ flex: 1 }} className="modal-info-section">
+                            <div>
+                                <span
+                                    className="empty-heart-badge"
+                                    style={{
+                                        width: '24px',
+                                        height: '24px',
+                                        display: 'inline-block',
+                                        cursor: 'pointer',
+                                    }}
+                                    onClick={() => props.addLikeHandler(props.post.id)}
+                                />{' '}
+                                <strong>{props.post.likes} likes</strong>
+                                <Button
+                                    color="danger"
+                                    size="sm"
+                                    style={{ marginLeft: '3em' }}
+                                    outline
+                                    onClick={() => props.deletePostHandler(props.post.id)}
+                                >
+                                    Delete?
+                </Button>{' '}
+                            </div>
+                            <div>
+                                Posted on:{' '}
+                                <span className="muted-text">
+                                    {new Date(props.post.timestamp).toLocaleString()}
+                                </span>
+                            </div>
+                        </section>
+                        <section style={{ flex: 1 }}>
+                            <Input
+                                placeholder="Add Comment ..."
+                                onKeyPress={event => {
+                                    if (event.key === 'Enter') {
+                                        props.addCommentHandler(props.post.id, event.target.value)
+                                        // clear the text input?
+                                        event.target.value = ''
+                                    }
+                                }}
                             />
-                            <strong>{props.post.likes} likes</strong>
-                            <Button
-                                color="danger"
-                                size="sm"
-                                style={{ marginLeft: '3em' }}
-                                outline={true}
-                                onClick={() => props.deletePostHandler(props.post.id)}
-                            >
-                                Delete
-                            </Button>
-                        </div>
-                        <div>
-                            Posted on: {' '}
-                            <span className="muted-text">
-                                {new Date(props.post.timestamp).toLocaleString()}
-                            </span>
-                        </div>
-                    </section>
-                    <section className="f-1">
-                        <Input
-                            placeholder="Add Comment"
-                            onKeyPress={e => {
-                                if (e.key === 'Enter') {
-                                    props.addCommentHandler(props.post.id, e.target.value);
-                                    e.target.value = '';
-                                }
-                            }} />
-                    </section>
+                        </section>
+                    </Col>
                 </Row>
             </ModalBody>
         </Modal>
-    </>
-}
+    </div>
+)
 
-export default PictureModal;
+export default PictureModal

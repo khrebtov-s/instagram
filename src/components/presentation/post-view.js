@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Col, Card, CardText, CardImg, CardImgOverlay } from 'reactstrap';
 
-export default class PostView ectends Component {
+export default class PostView extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,7 +10,7 @@ export default class PostView ectends Component {
         }
     };
 
-    render(){
+    render() {
         const { props } = this;
         return (
             <Col
@@ -47,7 +47,9 @@ export default class PostView ectends Component {
                             </span>
                         </CardText>
                     </CardImgOverlay>
+                </Card>
             </Col>
-                );
-            };
+
+        );
+    };
 };
