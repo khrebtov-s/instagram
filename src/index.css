@@ -233,12 +233,23 @@ header {
     background-image: url(https://www.instagram.com/static/bundles/base/sprite_core.png/00b79edf00fd.png)
 }
 
-.empty-heart-badge {
+.heart {
     background-position: 0 -400px;
     width: 24px;
     height: 21px;
     background-repeat: no-repeat;
-    background-image: url(https://www.instagram.com/static/bundles/base/sprite_core.png/00b79edf00fd.png)
+}
+
+.empty-heart-badge {
+    background: url('./img/Heart-icon.png') no-repeat center;
+    background-size: 96%;
+    background-position: 0 3px;
+}
+
+.active-heart-badge {
+    background-image: url('./img/heart-red.png');
+    background-size: 96%;
+    background-position: 0 3px;
 }
 
 .heart-icon {
@@ -307,13 +318,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.card:hover {
     background-color: rgb(0, 0, 0, 0.3);
     color: white;
 }
 
 .heart-btn {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
     cursor: pointer;
 }

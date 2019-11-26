@@ -1,13 +1,13 @@
 // define the reducers that changes the state tree based on the dispatched actions
-import _ from 'lodash'
+import _ from 'lodash';
 // import initial data
-import InitialPostsData from '../data/posts'
+import InitialPostsData from '../data/posts';
 
 // define our initial state
 const initialState = {
     posts: InitialPostsData,
     starredMeditations: [23, 25, 27],
-}
+};
 
 // small helper function to get unique board id by scanning through the entries
 function _getUniqueId(collection) {
@@ -17,29 +17,34 @@ function _getUniqueId(collection) {
         .value()
     MAX_ID = MAX_ID || 0
 
-    return MAX_ID + 1
-}
+    return MAX_ID + 1;
+};
 
 function add_like(state, action) {
     // extract the details from the action
-    const { post_id } = action
+    const { post_id } = action;
     // go through all the posts; and add comment for the given post_id
     let updated_posts = _.map(state, p => {
-        if (p.id === post_id) {
+        if (p.id === post_id && p.like === true) {
+            return Object.assign({}, p, {
+                likes: p.likes - 1,
+                like: false
+            })
+        } else if (p.id === post_id) {
             return Object.assign({}, p, {
                 likes: p.likes + 1,
+                like: true
             })
         } else {
             return p
         }
     })
-
     return updated_posts
-}
+};
 
 function add_comment(state, action) {
     // extract the details from the action
-    const { post_id, comment } = action
+    const { post_id, comment } = action;
     // go through all the posts; and add comment for the given post_id
     let updated_posts = _.map(state, p => {
         if (p.id === post_id) {
@@ -49,15 +54,13 @@ function add_comment(state, action) {
                 ...p,
                 comments: updated_comments,
             }
-
             return updated_post
         } else {
             return p
         }
     })
-
     return updated_posts
-}
+};
 
 // adds new post with given image id
 function add_post(state, action) {
@@ -72,7 +75,7 @@ function add_post(state, action) {
             comments: [],
         },
     ]
-}
+};
 
 // delete post
 function delete_post(state, action) {
@@ -111,8 +114,7 @@ function starredMeditationsReducer(
         default:
             return state
     }
-}
-
+};
 
 export default function appReducer(state = initialState, action) {
     return {
@@ -121,5 +123,5 @@ export default function appReducer(state = initialState, action) {
             state.starredMeditations,
             action
         ),
-    }
-}
+    };
+};
